@@ -1,0 +1,14 @@
+<script src="https://tamaro.raisenow.com/{{ raisenow_tamaro_api_key }}/latest/widget.js"></script>
+<div class="root"></div>
+
+<script>
+    window.rnw.tamaro.events.afterCreate.subscribe(async (event) => {
+        const api = event.data.api;
+
+        const configuration = {{ configuration | raw }};
+
+        for (const key in configuration) {
+            api.extendConfig(key, configuration[key]);
+        }
+    });
+</script>

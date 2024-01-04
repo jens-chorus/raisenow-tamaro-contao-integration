@@ -1,0 +1,45 @@
+settings:
+  raisenow_tamaro_api_key:
+    label: RaiseNow Tamaro API-Key
+    type: text
+    required: true
+
+    amounts:
+      label: Beträge
+      type: text
+      default: [62, 124]
+
+    allow_custom_amount:
+      label: Eigene Beträge erlauben
+      type: checkbox
+      default: false
+
+    recurring_intervals:
+      label: Wiederkehrende Zahlungsintervalle
+      type: text
+      default: ["semestral", "yearly"]
+
+    payment_types:
+      label: Zahlungsarten
+      type: text
+      default: ["recurring"]
+
+    payment_validations:
+      label: Zahlungsvalidierungen
+      type: text
+      default: "{stored_customer_accept_terms: {accepted: true}}"
+
+    slots:
+      label: Slots
+      type: text
+      default: "{profile_form_end: [{component: 'field', type: 'checkbox', name: 'stored_customer_accept_terms', text: 'payment_form.stored_customer_accept_terms'}]}"
+
+    translations:
+      label: Übersetzungen
+      type: text
+      default: "{en: {payment_form: {stored_customer_accept_terms: 'I understand that membership is conditional pending board approval.'}}, de: {payment_form: {stored_customer_accept_terms: 'I akzeptiere, dass meine Mitgliedschaft durch den Vorstand bewilligt werden muss.'}}}"
+
+    show_blocks:
+      label: Blöcke anzeigen
+      type: text
+      default: "{payment_address: true}"
